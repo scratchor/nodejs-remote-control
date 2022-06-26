@@ -13,7 +13,14 @@
     "keywords": [],
     "license": "ISC",
     "devDependencies": {
-        "nodemon": "^2.0.16"
+        "@types/ws": "^8.5.3",
+        "@typescript-eslint/eslint-plugin": "^5.29.0",
+        "@typescript-eslint/parser": "^5.29.0",
+        "eslint": "^8.18.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "nodemon": "^2.0.16",
+        "typescript": "^4.7.4"
     },
     "dependencies": {
         "jimp": "^0.16.1",
