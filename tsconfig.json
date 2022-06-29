@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext"],
+    "module": "ESNext",
+    "target": "ES2021",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src/**/*", "index.ts", "tests/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
