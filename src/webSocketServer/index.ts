@@ -3,11 +3,19 @@ import { IncomingMessage } from 'http';
 import dotenv from 'dotenv';
 import commands from '../commands.js';
 
-export default () => {
-  const wss = new WebSocketServer({ port: 8080 });
+dotenv.config();
 
-  wss.on('connection', (ws, req) => {
-    console.log('connection');
+const PORT: number = Number(process.env.PORT) || 8080;
+
+export default () => {
+  const wss = new WebSocketServer({ port: PORT });
+
+  wss.on('listening', () => console.log(`WebSocketServer is running on port ${PORT}!`));
+
+  wss.on('headers', (headers: string[]) => {
+    console.log('headers:');
+    headers.forEach((e: string) => console.log(`- ${e}`));
+  });
 
   wss.on('connection', (ws: WebSocket, req: IncomingMessage) => {
     const { remotePort, remoteAddress } = req.socket;
@@ -31,6 +39,15 @@ export default () => {
         console.error('Invalid command');
       }
     });
+
+    ws.on('close', (code) => {
+      duplex.destroy();
+      console.log(`WebSocket was closed, code ${code}`);
+    });
+
+    duplex.on('error', ((err: Error) => {
+      console.error(err);
+    }));
   });
 
   process.on('SIGINT', () => {
