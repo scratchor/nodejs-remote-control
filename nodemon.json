@@ -1,0 +1,13 @@
+{
+  "verbose": true,
+  "watch": ["src", "index.ts"],
+  "exec": "npm start",
+  "ignore": ["node_modules", "dist"],
+  "ext": "ts",
+  "execMap": {
+    "ts": "ts-node"
+  },
+  "events": {
+    "start": "cls || clear"
+  }
+}
