@@ -1,5 +1,4 @@
-# RSSchool NodeJS websocket task template
-> Static http server and base task packages.
+# Remote control
 
 ## Installation
 1. Clone/download repo
@@ -7,16 +6,15 @@
 
 ## Usage
 **Development**
-
-`npm run start:dev`
-
-* App served @ `http://localhost:8181` with nodemon
+`npm run dev`
 
 **Production**
+`npm run build`
 
-`npm run start`
+---
 
-* App served @ `http://localhost:8181` without nodemon
+* Frontend App served at `http://localhost:3000`
+* Backend App served at `http://localhost:8080`
 
 ---
 
@@ -24,7 +22,9 @@
 
 Command | Description
 --- | ---
-`npm run dev` | App served @ `http://localhost:8181` with nodemon
-`npm run start` | App served @ `http://localhost:8181` without nodemon
+`npm run dev` | App started at `http://localhost:8080` with nodemon
+`npm run build` | App started at `http://localhost:8080` no nodemon
+`npm run start` | App started at `http://localhost:8080` no nodemon
+`npm run start:dev` | App started manually at `http://localhost:8080` with nodemon
 
 **Note**: replace `npm` with `yarn` in `package.json` if you use yarn.
