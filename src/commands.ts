@@ -6,7 +6,6 @@ import mouseLeft from './actions/mouseLeft.js';
 import mousePosition from './actions/mousePosition.js';
 import mouseRight from './actions/mouseRight.js';
 import drawCircle from './actions/drawСircle.js';
-import printScreen from './actions/prntScrn.js';
 
 export interface ICommands {
   [method: string]: (
@@ -24,6 +23,5 @@ export default {
   mouse_right: (cmdKey, duplex, YDistance) => mouseRight(cmdKey, duplex, YDistance),
   draw_circle: (cmdKey, duplex, radius) => drawCircle(cmdKey, duplex, radius),
   draw_square: (cmdKey, duplex, width) => drawRectangle(cmdKey, duplex, width, width),
-  prnt_scrn: (cmdKey, duplex, size) => printScreen(cmdKey, duplex, size),
   draw_rectangle: (cmdKey, duplex, width, length) => drawRectangle(cmdKey, duplex, width, length),
 } as ICommands;
